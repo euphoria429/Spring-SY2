@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<description>My beans</description>
+<!--    <bean name="userDao" class="cn.hcx.Dao.UserDao"></bean>-->
+<!--    <bean id="userService" class="cn.hcx.Service.UserService">-->
+<!--        <constructor-arg index="0" ref="userDao"></constructor-arg>-->
+<!--    </bean>-->
+<!--    <bean id="userDao" class="cn.hcx.Static_factory.MyBeanFactory" factory-method="createBean"></bean>-->
+    <bean id="DaoBeanFactory" class="cn.hcx.factory.DaoBeanFactory"></bean>
+    <bean id="userDao" factory-bean="DaoBeanFactory" factory-method="CreateDaoBean"></bean>
+</beans>
